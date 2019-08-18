@@ -53,6 +53,8 @@ print("Parameters loading done")
 overlay = Overlay("./SkyNet.bit")
 print("Bitstream loaded")
 
+
+
 ################## Utility functions 
 
 IMG_DIR = 'test_images/'

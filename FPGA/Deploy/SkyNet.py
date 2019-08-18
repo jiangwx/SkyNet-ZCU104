@@ -6,6 +6,7 @@ import numpy as np
 import os
 import time
 import math
+import argparse
 from PIL import Image
 import cv2
 from datetime import datetime
@@ -14,6 +15,13 @@ from pynq import Overlay
 import pynq
 import struct
 from multiprocessing import Process, Pipe, Queue, Event, Manager
+
+parser = argparse.ArgumentParser(description='SkyNet with DVFS')
+parser.add_argument('--frequency', default='300', type=int, 
+                    help='SkyNet runtime frequency, from 20MHz to 500MHz (default: 300MHz)')
+parser.add_argument('--voltage', default='850', type=int, 
+                    help='SkyNet runtime voltage, from 660mV to 850mV (default: 850mV)')
+args = parser.parse_args()
 
 print('\n**** Running SkyNet')
 
@@ -53,7 +61,11 @@ print("Parameters loading done")
 overlay = Overlay("./SkyNet.bit")
 print("Bitstream loaded")
 
-
+################### Config the voltage and frequency
+dvs = 'sudo ./dvs ' + str(args.voltage)
+os.system(dvs)
+dfs = 'sudo ./dfs 0 ' + str(args.frequency)
+os.system(dfs)
 
 ################## Utility functions 
 

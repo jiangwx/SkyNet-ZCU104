@@ -21,7 +21,7 @@ Finally it shows the total execution time (s) and energy consumption (J).
 To run the demo:
 ```
 $ cd ./FPGA/Deploy/
-$ sudo python3 SkyNet.py
+$ sudo python3 SkyNet.py --frequency 330 --voltage 750
 ```
 
 You should be able to see outputs like:

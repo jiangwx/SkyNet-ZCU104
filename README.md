@@ -1,5 +1,5 @@
 # SkyNet
-This is a repository for SkyNet, a lightweight DNN specialized in object detection. The original SkyNet [SkyNet](https://github.com/TomG008/SkyNet) is implemented on Ultra96.
+This is a repository for SkyNet, a lightweight DNN specialized in object detection. The original [SkyNet](https://github.com/TomG008/SkyNet) is implemented on Ultra96.
 I transplant the project to ZCU104 and add dynamic voltage and frequency (DVFS) support to it.
 
 ---
